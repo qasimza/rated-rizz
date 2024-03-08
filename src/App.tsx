@@ -2,19 +2,24 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home'
+import { StyledEngineProvider } from '@mui/styled-engine';
+import { ThemeProvider, createTheme } from '@mui/material';
 
+const muiTheme = createTheme({
+  typography:{
+    fontFamily: ['"Inter"', '"system-ui"'].join(','),
+    }
+  }
+);
 
 function App() {
-  return (
-    <div>
-      <header className="App-header">
-      <Home/>  
-        <p className="underline text-primary-800 font-bold text-6xl">
-          Welcome to Rated Rizz!
-        </p>
-        
-      </header>
-    </div>
+  return (<>
+    <StyledEngineProvider injectFirst>
+    <ThemeProvider theme={muiTheme}>
+      <div><Home/></div>  
+      </ThemeProvider>
+    </StyledEngineProvider>
+  </>
   );
 }
 
