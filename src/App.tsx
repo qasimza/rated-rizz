@@ -1,16 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './components/home'
+import Home from './components/Home'
+
+
 function App() {
   return (
-    <div className="">
+    <div>
       <header className="App-header">
-        
+      <Home/>  
         <p className="underline text-primary-800 font-bold text-6xl">
           Welcome to Rated Rizz!
         </p>
-        <Home/>
+        
       </header>
     </div>
   );
