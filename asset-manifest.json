@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/rated-rizz/static/css/main.348e80c9.css",
-    "main.js": "/rated-rizz/static/js/main.babda800.js",
-    "static/js/453.c8606492.chunk.js": "/rated-rizz/static/js/453.c8606492.chunk.js",
+    "main.css": "/rated-rizz/static/css/main.e353395f.css",
+    "main.js": "/rated-rizz/static/js/main.2a49373c.js",
+    "static/js/453.15a8e751.chunk.js": "/rated-rizz/static/js/453.15a8e751.chunk.js",
     "index.html": "/rated-rizz/index.html",
-    "main.348e80c9.css.map": "/rated-rizz/static/css/main.348e80c9.css.map",
-    "main.babda800.js.map": "/rated-rizz/static/js/main.babda800.js.map",
-    "453.c8606492.chunk.js.map": "/rated-rizz/static/js/453.c8606492.chunk.js.map"
+    "main.e353395f.css.map": "/rated-rizz/static/css/main.e353395f.css.map",
+    "main.2a49373c.js.map": "/rated-rizz/static/js/main.2a49373c.js.map",
+    "453.15a8e751.chunk.js.map": "/rated-rizz/static/js/453.15a8e751.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.348e80c9.css",
-    "static/js/main.babda800.js"
+    "static/css/main.e353395f.css",
+    "static/js/main.2a49373c.js"
   ]
 }
