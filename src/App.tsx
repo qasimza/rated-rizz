@@ -4,10 +4,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="underline">
+        
+        <p className="underline text-primary-800 font-bold text-6xl">
           Welcome to Rated Rizz!
         </p>
         <a
