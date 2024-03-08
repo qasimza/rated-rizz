@@ -16,7 +16,7 @@ function App() {
   return (<>
     <StyledEngineProvider injectFirst>
     <ThemeProvider theme={muiTheme}>
-      <div><Home/></div>  
+      <Home/>  
       </ThemeProvider>
     </StyledEngineProvider>
   </>
