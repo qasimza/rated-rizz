@@ -1,5 +1,13 @@
+import { Card, CardContent, Typography } from "@mui/material";
+
 const About = () => {
-    return (<></>)
+    return (
+    <>
+        
+    </>
+
+        
+    )
 }
 
 export default About;
