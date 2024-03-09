@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './components/Home'
+import LandingPage from './components/LandingPage'
 import { StyledEngineProvider } from '@mui/styled-engine';
 import { ThemeProvider, createTheme } from '@mui/material';
 
@@ -16,7 +16,7 @@ function App() {
   return (<>
     <StyledEngineProvider injectFirst>
     <ThemeProvider theme={muiTheme}>
-      <div><Home/></div>  
+      <LandingPage/>  
       </ThemeProvider>
     </StyledEngineProvider>
   </>
