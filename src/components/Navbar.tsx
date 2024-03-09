@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className='flex w-full h-24 items-center justify-center'>
             <div className='flex w-[80%] h-full items-center justify-between'>
                     <Box className="bg-primary-600 h-16 w-20 flex items-center justify-center">
-                        <Typography className="text-indigo-100 font-bold text-5xl">R</Typography>
+                        <Typography className="text-white font-bold text-5xl">R</Typography>
                     </Box>
                     <Typography className="text-primary-600 font-bold text-4xl ml-2">RatedRizz</Typography>
                 <div className='flex w-full justify-end space-x-5'>
