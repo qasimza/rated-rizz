@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import LandingPage from './components/LandingPage'
 import { StyledEngineProvider } from '@mui/styled-engine';
