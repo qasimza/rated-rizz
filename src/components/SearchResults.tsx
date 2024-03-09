@@ -1,4 +1,4 @@
-const Searchresults = () => {
+const SearchResults = () => {
     return (
     <>
         
@@ -8,4 +8,4 @@ const Searchresults = () => {
     )
 }
 
-export default Searchresults;
+export default SearchResults;
