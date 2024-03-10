@@ -8,6 +8,7 @@ export type University = {
 export type Professor = {
     name: String
     university: String
+    rating: number
     courses: String[]
     review: String
   }
@@ -29,9 +30,22 @@ export function addUniversity(){
     return Promise.resolve(true)
 }
 
-export function searchProfessors(){
+export function searchProfessors(): Professor[]{
     const professors = [
-        {label: "Dr. Prasant Mohapatra"}
+        {
+            name: "Professor Onename",
+            university: "University of South Florida",
+            rating: 4.2,
+            courses: ["COUR1001", "COUR1009", "COUR1201"],
+            review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+            name: "Professor Twoname",
+            university: "University of Florida",
+            rating: 4.2,
+            courses: ["COUR1001", "COUR1009", "COUR1201"],
+            review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }       
     ]
     return professors
 }
@@ -72,9 +86,9 @@ export function getProfessor(){
 }
 
 export function getSearchResults(): ListOfResults{
-    const universities: University[] = searchUniversities();
+    const universities: Professor[] = searchProfessors();
     const searchResults = {
-        type: SearchResultTypes[1],
+        type: SearchResultTypes[0],
         results: universities,
     }
     return searchResults

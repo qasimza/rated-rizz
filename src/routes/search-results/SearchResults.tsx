@@ -1,11 +1,11 @@
 import { Avatar, Button, Chip, Divider, Stack, Typography } from "@mui/material";
-import SearchBar from "../shared/components/Searchbar";
+import SearchBar from "../../shared/components/Searchbar";
 import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { ListOfResults, Professor, University, getSearchResults } from "../services/search";
+import { ListOfResults, Professor, University, getSearchResults } from "../../services/search";
 import GradeIcon from '@mui/icons-material/Grade';
 
 const UniversityAccordian = (props: University) => {
@@ -81,8 +81,11 @@ const ProfessorAccordian = (props: Professor) => {
       </AccordionSummary>
       
       <AccordionDetails>
-      <Typography variant="body1" className="text-2xl">{props.review}</Typography>
-        <Divider className="mb-4"/>
+      <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-6">AI GENERATED SUMMARY OF REVIEWS</Typography>
+      <Typography variant="body1" className="text-base">{props.review}</Typography>
+      <Divider className="mb-4 mt-4"/>
+      <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-4">COURSES TAUGHT</Typography>
+
         {props.courses.map(course => (
           <Chip label={course} className="m-1"/>
           ))
