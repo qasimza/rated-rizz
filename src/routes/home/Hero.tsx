@@ -1,7 +1,7 @@
-import { Autocomplete, Button, Divider, Stack, TextField } from "@mui/material";
+import { Button, Divider, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import SearchIcon from '@mui/icons-material/Search';
-import { searchUniversities, searchProfessors } from "../../services/search";
+import AutocompleteSearch from "../../shared/components/AutocompleteSearch";
 
 
 const Hero = () => {
@@ -20,14 +20,8 @@ const Hero = () => {
             alignItems="center"
             rowGap={2}
             >
-                <Autocomplete options={searchUniversities()}
-                renderInput={(params) => <TextField {...params} label="University" />}
-                className="w-96"
-                />
-                <Autocomplete options={searchProfessors()}
-                renderInput={(params) => <TextField {...params} label="Professor" />} 
-                className="w-96"
-                />
+                <AutocompleteSearch type="University" className="w-96"/>
+                <AutocompleteSearch type="Professor" className="w-96"/>
                 <Button variant='contained' endIcon={<SearchIcon/>} className="bg-primary-600 w-96 h-12">Search</Button>
             </Stack>
             <Stack 

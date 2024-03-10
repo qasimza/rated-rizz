@@ -1,10 +1,10 @@
-import { Autocomplete, ClickAwayListener, Grow, IconButton, MenuItem, MenuList, Paper, Popper, Stack, TextField, Typography } from '@mui/material';
+import { ClickAwayListener, Grow, IconButton, MenuItem, MenuList, Paper, Popper, Stack, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
-import { searchUniversities, searchProfessors } from '../../services/search';
 import { useState, useRef, useEffect } from 'react';
 import logo from '../../shared/images/logo.png'
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import AutocompleteSearch from './AutocompleteSearch';
 
 const DashboardMenu = () => {
     const [open, setOpen] = useState(false);
@@ -101,14 +101,8 @@ const DashboardMenu = () => {
 const SearchFields = () => {
   return (
   <div className='flex flex-row space-x-5'>
-    <Autocomplete options={searchUniversities()}
-      renderInput={(params) => <TextField {...params} label="University" />}
-      className="w-96"
-    />
-    <Autocomplete options={searchProfessors()}
-      renderInput={(params) => <TextField {...params} label="Professor" />} 
-      className="w-96"
-    />
+    <AutocompleteSearch type="University" className="w-96"/>
+    <AutocompleteSearch type="Professor" className="w-96"/>
     <Button variant="contained" className='bg-primary-600 h-14 w-14'>
     <SearchIcon className="text-4xl"/>
     </Button>
