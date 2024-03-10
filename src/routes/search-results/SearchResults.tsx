@@ -66,6 +66,21 @@ const UniversityAccordian = (props: University) => {
 }
 
 const ProfessorAccordian = (props: Professor) => {
+  const Rating = (props: {rating: number, total: number}) => {
+    return (
+      <Stack
+      direction="column"
+      alignItems="center"
+      className="w-[55%]"
+      >
+        <Avatar className="bg-primary-600 w-20 h-20">
+          <GradeIcon className="text-6xl" />
+        </Avatar>
+        <Typography className="text-primary-600 font-semibold text-2xl">{props.rating} / 5.0</Typography>
+        <Typography className="text-secondary-600 font-semibold text-lg">({props.total} total reviews)</Typography>
+      </Stack>
+    )
+  }
 
   return (
     <Accordion>
@@ -81,8 +96,15 @@ const ProfessorAccordian = (props: Professor) => {
       </AccordionSummary>
       
       <AccordionDetails>
-      <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-6">AI GENERATED SUMMARY OF REVIEWS</Typography>
-      <Typography variant="body1" className="text-base">{props.review}</Typography>
+      <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-6">
+        RIZZ SCORE AND REVIEW (AI GENERATED SUMMARY)
+      </Typography>
+      <Stack
+        spacing={4}
+        direction="row">
+        <Rating rating={3.8} total={22}/>
+        <Typography variant="body1" className="text-base">{props.review}</Typography>
+      </Stack>
       <Divider className="mb-4 mt-4"/>
       <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-4">COURSES TAUGHT</Typography>
 
