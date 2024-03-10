@@ -64,13 +64,17 @@ export function getUniversity(id: number){
     return universities[id]
 }
 
-export function searchProfessors(query: SearchQueryBaseType): ListOfResults{
+export function searchProfessors(query: SearchQueryBaseType, university_ids?: number[]): ListOfResults{
     let matchType: MatchType
     let results: ProfessorType[]
     
     if (query.id) {
        matchType = "Exact";
        results = [professors[query.id]]    
+    } else if (university_ids) {
+        matchType = "Approximate"
+        results = professors.filter((professors) => professors.name.includes(query.name)
+                                                    && university_ids.includes(professors.university_id));
     } else {
         matchType = "Approximate"
         results = professors.filter((professors) => professors.name.includes(query.name));
@@ -108,7 +112,8 @@ export function getSearchResults(props: SearchQueryType): ListOfResults{
     let searchResults: ListOfResults;
     
     if (props.university && props.professor){
-        searchResults = searchProfessors(props.professor)
+        const university_ids = searchUniversities(props.university).results.map(u => (u.id))
+        searchResults = searchProfessors(props.professor, university_ids)
     } else if (props.university) {
         searchResults = searchUniversities(props.university)
     } else if (props.professor) {
