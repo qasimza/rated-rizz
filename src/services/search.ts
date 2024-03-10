@@ -1,6 +1,6 @@
 export type University = {
     name: String
-    locaiton: String
+    location: String
     top_five: String[]
     courses: String[]
   }
@@ -8,7 +8,7 @@ export type University = {
 export type Professor = {
     name: String
     university: String
-    courses: String
+    courses: String[]
     review: String
   }
 
@@ -40,9 +40,24 @@ export function searchUniversities(): University[]{
     const universities = [
         {
             name: "University of South Florida",
-            locaiton: "Tampa",
+            location: "Tampa, FL",
             top_five: ["Professor One", "Professor Two", "Professor Three", "Professor Four", "Professor Five"],
-            courses: [""]
+            courses: ["COUR1001", "COUR1009", "COUR1201", "COUR3002", "COUR3001", 
+            "COUR2201", "COUR2001", "COUR1041", "COUR1201", "COUR1021", "COUR1013",]
+        },
+        {
+            name: "University of Florida",
+            location: "Gainsville, FL",
+            top_five: ["Professor One", "Professor Two", "Professor Three", "Professor Four", "Professor Five"],
+            courses: ["COUR1001", "COUR1009", "COUR1201", "COUR3002", "COUR3001", "COUR1009", "COUR1201", "COUR3002", "COUR3001", 
+            "COUR2201", "COUR2001", "COUR1041", "COUR1201", "COUR1021", "COUR1013", "COUR1009", "COUR1201", "COUR3002", "COUR3001"]
+        },
+        {
+            name: "University of Miami",
+            location: "Coral Gables, FL",
+            top_five: ["Professor One", "Professor Two", "Professor Three", "Professor Four", "Professor Five"],
+            courses: ["COUR1001", "COUR1009", "COUR1201", "COUR3002", "COUR3001", 
+            "COUR2201", "COUR2001", "COUR1041", "COUR1201", "COUR1021", "COUR1013",]
         },
     ]
     return universities

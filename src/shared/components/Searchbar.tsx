@@ -1,4 +1,4 @@
-import { Autocomplete, Box, ClickAwayListener, Grow, IconButton, MenuItem, MenuList, Paper, Popper, Stack, TextField, Typography } from '@mui/material';
+import { Autocomplete, ClickAwayListener, Grow, IconButton, MenuItem, MenuList, Paper, Popper, Stack, TextField, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { searchUniversities, searchProfessors } from '../../services/search';
 import { useState, useRef, useEffect } from 'react';
