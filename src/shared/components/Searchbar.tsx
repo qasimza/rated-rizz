@@ -1,8 +1,10 @@
-import { Autocomplete, Box, ClickAwayListener, Grow, MenuItem, MenuList, Paper, Popper, Stack, TextField, Typography } from '@mui/material';
+import { Autocomplete, Box, ClickAwayListener, Grow, IconButton, MenuItem, MenuList, Paper, Popper, Stack, TextField, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { searchUniversities, searchProfessors } from '../../services/search';
 import { useState, useRef, useEffect } from 'react';
 import logo from '../../shared/images/logo.png'
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
 
 const DashboardMenu = () => {
     const [open, setOpen] = useState(false);
@@ -43,19 +45,18 @@ const DashboardMenu = () => {
     }, [open]);
     return (
         <>
-        <Button
-          ref={anchorRef}
-          id="composition-button"
-          aria-controls={open ? 'composition-menu' : undefined}
-          aria-expanded={open ? 'true' : undefined}
-          aria-haspopup="true"
-          onClick={handleToggle}
-          variant='contained'
-          size='large'
-          className='bg-primary-600 w-48 h-12'
-        >
-          Dashboard
-        </Button>
+        <IconButton
+        ref={anchorRef}
+        id="composition-button"
+        aria-controls={open ? 'composition-menu' : undefined}
+        aria-expanded={open ? 'true' : undefined}
+        aria-haspopup="true"
+        onClick={handleToggle}
+        className="text-primary-600"
+      >
+        <MenuIcon />
+      </IconButton>
+        
         <Popper
           open={open}
           anchorEl={anchorRef.current}
@@ -85,7 +86,7 @@ const DashboardMenu = () => {
                     <MenuItem onClick={handleClose}>Support</MenuItem>
                     <MenuItem onClick={handleClose}>Pricing</MenuItem>
                     <MenuItem onClick={handleClose}>Login</MenuItem>
-                    <MenuItem onClick={handleClose}>SignUp</MenuItem>
+                    <MenuItem onClick={handleClose} className='font-medium text-primary-600'>SignUp</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
@@ -95,6 +96,24 @@ const DashboardMenu = () => {
                     
         </>
     )
+}
+
+const SearchFields = () => {
+  return (
+  <div className='flex flex-row space-x-5'>
+    <Autocomplete options={searchUniversities()}
+      renderInput={(params) => <TextField {...params} label="University" />}
+      className="w-96"
+    />
+    <Autocomplete options={searchProfessors()}
+      renderInput={(params) => <TextField {...params} label="Professor" />} 
+      className="w-96"
+    />
+    <Button variant="contained" className='bg-primary-600 h-14 w-14'>
+    <SearchIcon className="text-4xl"/>
+    </Button>
+  </div>
+  )
 }
 
 const SearchBar = () => {
@@ -110,16 +129,7 @@ const SearchBar = () => {
             <img src={logo} alt="Rated Rizz Logo" className='w-16 h-16'/>
             <Typography className="text-primary-600 font-bold text-4xl ml-2">RatedRizz</Typography>
         </div>
-        <div className='flex flex-row space-x-5'>
-            <Autocomplete options={searchUniversities()}
-                renderInput={(params) => <TextField {...params} label="University" />}
-                className="w-96"
-            />
-            <Autocomplete options={searchProfessors()}
-                renderInput={(params) => <TextField {...params} label="Professor" />} 
-                className="w-96"
-            />
-        </div>
+        <SearchFields/>
         <DashboardMenu/>
         </Stack>
     )
