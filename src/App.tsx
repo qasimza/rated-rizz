@@ -1,4 +1,3 @@
-import React from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 import LandingPage from './components/LandingPage'
@@ -20,28 +19,28 @@ const muiTheme = createTheme({
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "rated-rizz",
     element: <LandingPage />,
     errorElement: <ErrorPage />
   },
   {
-    path: "/about",
+    path: "rated-rizz/about",
     element: <About />,
   },
   {
-    path: "/login",
+    path: "rated-rizz/login",
     element: <Login />,
   },
   {
-    path: "/signup",
+    path: "rated-rizz/signup",
     element: <Signup />,
   },
   {
-    path: "/search-results",
+    path: "rated-rizz/search-results",
     element: <SearchResults />,
   },
   {
-    path: "/professor",
+    path: "rated-rizz/professor",
     element: <Professor />,
   },
 ]);

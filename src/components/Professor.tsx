@@ -1,6 +1,7 @@
 const Professor = () => {
     return (
     <>
+    Professor List
         
     </>
 

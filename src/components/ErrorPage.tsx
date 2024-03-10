@@ -1,7 +1,12 @@
 import { Stack, Typography } from "@mui/material";
+import { useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
-    return (
+  
+  const error = useRouteError();
+  console.error(error);
+  
+  return (
       <Stack
         justifyContent="center"
         alignItems="center"
@@ -10,8 +15,8 @@ const ErrorPage = () => {
         >
         <Typography variant="h1" className="text-primary-600 font-bold text-6xl mt-6">Oops! Looks like we ran into an error...</Typography>
         <Typography variant="h1" className="text-secondary-700 font-semibold text-3xl text-center">
-          <div>RatedRizz team might be still working on this feature.</div>
-          <div>Try again in a few days and if you are still having issues, feel free to contact us :) </div>
+          <div>Try refreshing the page.</div>
+          <div>If you still see this error, please feel free to contact us!</div>
           </Typography>
 
       </Stack>      
