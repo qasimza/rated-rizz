@@ -1,7 +1,7 @@
 import { Autocomplete, Button, Divider, Stack, TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import SearchIcon from '@mui/icons-material/Search';
-import { searchUniversities, searchProfessors } from "../../services/serach";
+import { searchUniversities, searchProfessors } from "../../services/search";
 
 
 const Hero = () => {

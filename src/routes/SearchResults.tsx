@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material";
-import SearchBar from "../shared/Searchbar";
+import SearchBar from "../shared/components/Searchbar";
 import UnderConstruction from "./errors/UnderConstruction";
 
 const SearchResults = () => {

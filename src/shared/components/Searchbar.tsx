@@ -1,8 +1,8 @@
 import { Autocomplete, Box, ClickAwayListener, Grow, MenuItem, MenuList, Paper, Popper, Stack, TextField, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
-import { searchUniversities, searchProfessors } from '../services/serach';
+import { searchUniversities, searchProfessors } from '../../services/search';
 import { useState, useRef, useEffect } from 'react';
-import logo from '../shared/images/logo.png'
+import logo from '../../shared/images/logo.png'
 
 const DashboardMenu = () => {
     const [open, setOpen] = useState(false);
