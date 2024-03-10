@@ -3,7 +3,7 @@ import Hero from './Hero';
 import About from './About';
 import { Stack } from '@mui/material';
 
-export default function LandingPage(){
+export default function Home(){
     return (
       <Stack
         justifyContent="center"
