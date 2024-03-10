@@ -57,6 +57,12 @@ _This repo contains frontend applicaiton._
 
 ## Developer Instructions
 
+### Prerequisite
+
+Install `Node` and `npm`.
+
+### Most Relevant Scripts
+
 In the project directory, you can run:
 
 #### `npm ci`
