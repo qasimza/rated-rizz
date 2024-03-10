@@ -1,11 +1,11 @@
-const Searchresults = () => {
+const SearchResults = () => {
     return (
     <>
-        
+        Search results
     </>
 
         
     )
 }
 
-export default Searchresults;
+export default SearchResults;
