@@ -1,8 +1,17 @@
+import { Stack } from "@mui/material";
+import SearchBar from "../shared/Searchbar";
 import UnderConstruction from "./errors/UnderConstruction";
 
 const SearchResults = () => {
     return (
-    <UnderConstruction/>
+        <Stack
+        direction="column" 
+        justifyContent="center"
+        alignItems="center"
+        rowGap={4}
+        >
+        <SearchBar/>
+      </Stack>
     )
 }
 
