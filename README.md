@@ -1,12 +1,70 @@
-# Getting Started with Create React App
+# Rated Rizz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+Professor Recommendation System for Students, with Course-Specific assignment lookup and AI Tutoring. 
 
-## Available Scripts
+_This repo contains frontend applicaiton._
+
+#### Live Link: [RatedRizz](https://qasimza.github.io/rated-rizz/)
+
+## Directory Structure
+
+```bash
+.
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo.png
+│   ├── manifest.json
+│   └── robots.txt
+├── README.md
+├── src
+│   ├── App.css
+│   ├── App.test.tsx
+│   ├── App.tsx
+│   ├── index.css
+│   ├── index.tsx
+│   ├── react-app-env.d.ts
+│   ├── reportWebVitals.ts
+│   ├── routes                              # Stores routes
+│   │   ├── assignments
+│   │   │   ├── AITutor.tsx
+│   │   │   ├── Assignments.tsx
+│   │   │   └── ViewAssignment.tsx
+│   │   ├── errors
+│   │   │   ├── ErrorPage.tsx
+│   │   │   └── UnderConstruction.tsx
+│   │   ├── home                           # Landing page & associated components
+│   │   │   ├── About.tsx
+│   │   │   ├── ContactUs.tsx
+│   │   │   ├── Hero.tsx
+│   │   │   ├── Home.tsx
+│   │   │   └── Navbar.tsx
+│   │   ├── Login.tsx
+│   │   ├── professor
+│   │   │   └── Professor.tsx
+│   │   ├── search-results
+│   │   ├── SearchResults.tsx
+│   │   └── Signup.tsx
+│   ├── services                        # Stores services for hooks and other cosmetic methods
+│   └── setupTests.ts
+├── tailwind.config.js
+└── tsconfig.json
+```
+
+## Developer Instructions
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm ci`
+
+Performs a clean install of required packages/modules.\
+Do this when you first download the repo. And every time you create a new branch.
+
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +72,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+#### `npm deploy`
+Deploys page to live site. Currently hooked to `gh-pages`
+
+### Other Scripts
+
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +92,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -39,8 +102,12 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## References
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[React documentation](https://reactjs.org/).
+
+[MaterialUI documentation](https://rhttps://mui.com/material-ui/).
+
+[TailwindCSS documentation](https://https://tailwindcss.com/docs/).
