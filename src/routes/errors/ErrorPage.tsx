@@ -15,8 +15,8 @@ const ErrorPage = () => {
         >
         <Typography variant="h1" className="text-primary-600 font-bold text-6xl mt-6">Oops! Looks like we ran into an error...</Typography>
         <Typography variant="h1" className="text-secondary-700 font-semibold text-3xl text-center">
-          <div>Try refreshing the page.</div>
-          <div>If you still see this error, please feel free to contact us!</div>
+          <div>Try refreshing the page or restart your browser.</div>
+          <div>If the issue still persists, please feel free to contact us!</div>
           </Typography>
 
       </Stack>      
