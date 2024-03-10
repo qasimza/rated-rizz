@@ -38,6 +38,10 @@ const router = createBrowserRouter([
     path: "rated-rizz/professor",
     element: <Professor />,
   },
+  {
+    path: "rated-rizz/*",
+    element: <ErrorPage />,
+  },
 ]);
 
 function App() {
