@@ -1,14 +1,8 @@
 import { Autocomplete, Button, Divider, Stack, TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import SearchIcon from '@mui/icons-material/Search';
+import { searchUniversities, searchProfessors } from "../../services/serach";
 
-const universities = [
-    {label: "University of South Florida"}
-]
-
-const professors = [
-    {label: "Dr. Prasant Mohapatra"}
-]
 
 const Hero = () => {
     return (
@@ -26,11 +20,11 @@ const Hero = () => {
             alignItems="center"
             rowGap={2}
             >
-                <Autocomplete options={universities}
+                <Autocomplete options={searchUniversities()}
                 renderInput={(params) => <TextField {...params} label="University" />}
                 className="w-96"
                 />
-                <Autocomplete options={professors}
+                <Autocomplete options={searchProfessors()}
                 renderInput={(params) => <TextField {...params} label="Professor" />} 
                 className="w-96"
                 />
