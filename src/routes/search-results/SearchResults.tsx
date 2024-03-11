@@ -7,6 +7,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { ListOfResults, ProfessorType, SearchQueryType, UniversityType, getProfessor, getSearchResults, getUniversity } from "../../services/search";
 import GradeIcon from '@mui/icons-material/Grade';
+import BaseTemplate from "../../shared/components/BaseTemplate";
 
 const UniversityAccordian = (props: UniversityType) => {
   const Professor = (props: {name: String}) => {
@@ -24,6 +25,7 @@ const UniversityAccordian = (props: UniversityType) => {
   }
   
   return (
+    <div>
     <Accordion>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
@@ -52,7 +54,7 @@ const UniversityAccordian = (props: UniversityType) => {
         <Divider className="mb-4"/>
         <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-4">POPULAR COURSES</Typography>
         {props.course_ids.map(course_id => (
-          <Chip label={course_id} className="m-1"/>
+          <Chip label={course_id} className="m-1 bg-blue-400 text-white font-bold text-sm"/>
           ))
         }
      </AccordionDetails>
@@ -62,6 +64,7 @@ const UniversityAccordian = (props: UniversityType) => {
      </AccordionActions>
 
     </Accordion>
+    </div>
   )
 }
 
@@ -83,40 +86,42 @@ const ProfessorAccordian = (props: ProfessorType) => {
   }
   const universityInfo = getUniversity(props.university_id);
   return (
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1-content"
-        id="panel1-header"
-      >
-        <Typography variant="body1" className="text-2xl">
-        <span className="text-primary-600 font-bold">{props.name}, </span>
-        <span className="text-secondary-900 font-normal">{universityInfo.name}, {universityInfo.location}</span>
+    <div>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          <Typography variant="body1" className="text-2xl">
+          <span className="text-primary-600 font-bold">{props.name}, </span>
+          <span className="text-secondary-900 font-normal">{universityInfo.name}, {universityInfo.location}</span>
+          </Typography>
+        </AccordionSummary>
+        
+        <AccordionDetails>
+        <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-6">
+          RIZZ SCORE AND REVIEW (AI GENERATED SUMMARY)
         </Typography>
-      </AccordionSummary>
-      
-      <AccordionDetails>
-      <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-6">
-        RIZZ SCORE AND REVIEW (AI GENERATED SUMMARY)
-      </Typography>
-      <div className="grid grid-cols-5">
-        <Rating rating={3.8} total={22}/>
-        <Typography variant="body1" className="text-base col-span-4">{props.overall_review}</Typography>
-        </div>
-      <Divider className="mb-4 mt-4"/>
-      <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-4">COURSES TAUGHT</Typography>
+        <div className="grid grid-cols-5">
+          <Rating rating={3.8} total={22}/>
+          <Typography variant="body1" className="text-base col-span-4">{props.overall_review}</Typography>
+          </div>
+        <Divider className="mb-4 mt-4"/>
+        <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-4">COURSES TAUGHT</Typography>
 
-        {props.course_ids.map(course_id => (
-          <Chip label={course_id} className="m-1"/>
-          ))
-        }
-     </AccordionDetails>
+          {props.course_ids.map(course_id => (
+            <Chip label={course_id} className="m-1 bg-blue-400 text-white font-bold text-sm"/>
+            ))
+          }
+      </AccordionDetails>
 
-     <AccordionActions>
-        <Button className="text-primary-600">Click here for more...</Button>
-     </AccordionActions>
+      <AccordionActions>
+          <Button className="text-primary-600">Click here for more...</Button>
+      </AccordionActions>
 
-    </Accordion>
+      </Accordion>
+    </div>
   )
 }
 
@@ -142,7 +147,7 @@ const ResultList = (props: ListOfResults) => {
   }
 }
 
-const SearchResults = () => {
+const SearchResultsComponent = () => {
   const searchQuery1: SearchQueryType = {  //  Approximate uni name match
     university: {
       name: "Florida"
@@ -189,13 +194,7 @@ const SearchResults = () => {
 
   const res = getSearchResults(searchQuery4)
     return (
-        <Stack
-        direction="column" 
-        justifyContent="center"
-        alignItems="center"
-        rowGap={2}
-        >
-        <SearchBar/>
+        <>
         <Typography variant="h1" className="text-primary-600 font-normal tracking-widest text-xl mt-20">SEARCH RESULTS</Typography>
         <Typography variant="h2" className="font-bold text-7xl ml-2">
         <span className="text-secondary-800">Matching </span>
@@ -204,9 +203,15 @@ const SearchResults = () => {
         <div className="mt-20 flex flex-col space-y-4 max-w-[60%]">
           <ResultList {...res}/>
         </div>
-      </Stack>
+      </>
     )
 }
 
-export default SearchResults;
+const SearchResultsPage = () => {
+  return (
+    <BaseTemplate navbarComponent={<SearchBar />} pageComponent={<SearchResultsComponent />} />
+)
+}
+
+export default SearchResultsPage;
 

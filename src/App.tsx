@@ -5,7 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material';
 import Home from './routes/home/Home'
 import Signup from './routes/Signup';
 import Login from './routes/Login';
-import SearchResults from './routes/search-results/SearchResults';
+import SearchResultsPage from './routes/search-results/SearchResults';
 import ErrorPage from './routes/errors/ErrorPage';
 import ProfessorPage from './routes/professor/ProfessorPage';
 
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: "rated-rizz/search-results",
-    element: <SearchResults />,
+    element: <SearchResultsPage />,
   },
   {
     path: "rated-rizz/professor",
