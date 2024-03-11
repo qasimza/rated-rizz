@@ -1,9 +1,9 @@
 import UnderConstruction from "../errors/UnderConstruction";
 
-const About = () => {
+const Pricing = () => {
     return (
         <UnderConstruction />  
         )
 }
 
-export default About;
+export default Pricing;

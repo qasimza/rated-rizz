@@ -1,14 +1,8 @@
-import { Autocomplete, Button, Divider, Stack, TextField } from "@mui/material";
+import { Button, Divider, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import SearchIcon from '@mui/icons-material/Search';
+import AutocompleteSearch from "../../shared/components/AutocompleteSearch";
 
-const universities = [
-    {label: "University of South Florida"}
-]
-
-const professors = [
-    {label: "Dr. Prasant Mohapatra"}
-]
 
 const Hero = () => {
     return (
@@ -26,15 +20,14 @@ const Hero = () => {
             alignItems="center"
             rowGap={2}
             >
-                <Autocomplete options={universities}
-                renderInput={(params) => <TextField {...params} label="University" />}
-                className="w-96"
-                />
-                <Autocomplete options={professors}
-                renderInput={(params) => <TextField {...params} label="Professor" />} 
-                className="w-96"
-                />
-                <Button variant='contained' endIcon={<SearchIcon/>} className="bg-primary-600 w-96 h-12">Search</Button>
+                <AutocompleteSearch type="University" className="w-96"/>
+                <AutocompleteSearch type="Professor" className="w-96"/>
+                <Button 
+                    variant='contained' 
+                    endIcon={<SearchIcon/>} 
+                    className="bg-primary-600 w-96 h-12">
+                        Search
+                </Button>
             </Stack>
             <Stack 
             direction="column" 
@@ -44,9 +37,7 @@ const Hero = () => {
             >
                 <Typography variant="h1" className="text-primary-600 font-bold text-7xl mt-6">RatedRizz</Typography>
             <Typography variant="h2" className="text-secondary-700 font-semibold text-3xl">Student success made easy!</Typography>
-            </Stack>
-            
-            
+            </Stack> 
         </Stack>
     )
 }
