@@ -174,7 +174,7 @@ const professors: ProfessorType[] = [
         overall_rating: 4.2,
         overall_review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         course_ids: ["COUR1001", "COUR1009", "COUR1201"],
-        reviews: [""]
+        reviews: ["Great Professor, assignment heavy.", "Lots of assignments and project work.", "Always available for office hours"]
     },
     {
         id: 1,
@@ -183,7 +183,9 @@ const professors: ProfessorType[] = [
         overall_rating: 4.2,
         overall_review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         course_ids: ["COUR1001", "COUR1009", "COUR1201"],
-        reviews: [""]
+        reviews: ["Great Professor, assignment heavy.", 
+        "Lots of assignments and project work.Cursus risus at ultrices mi tempus imperdiet nulla. Amet nulla facilisi morbi tempus iaculis urna. Tincidunt ornare massa eget egestas purus viverra accumsan in. Sapien et ligula ullamcorper malesuada proin libero nunc consequat. In nulla posuere sollicitudin aliquam ultrices sagittis orci.", 
+        "Always available for office hours.", "Super helpful!! Amet nulla facilisi morbi tempus iaculis urna. Tincidunt ornare massa eget egestas purus viverra accumsan indica la ferromirera."]
     },
     {
         id: 2,

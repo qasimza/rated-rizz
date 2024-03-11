@@ -187,7 +187,7 @@ const SearchResults = () => {
     }
   }
 
-  const res = getSearchResults(searchQuery3)
+  const res = getSearchResults(searchQuery4)
     return (
         <Stack
         direction="column" 
