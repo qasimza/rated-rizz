@@ -9,7 +9,7 @@ import { ListOfResults, ProfessorType, SearchQueryType, UniversityType, getProfe
 import GradeIcon from '@mui/icons-material/Grade';
 import BaseTemplate from "../../shared/components/BaseTemplate";
 
-const UniversityAccordian = (props: UniversityType) => {
+const UniversityAccordion = (props: UniversityType) => {
   const Professor = (props: {name: String}) => {
     return (
       <div className="flex flex-col items-center">
@@ -60,7 +60,7 @@ const UniversityAccordian = (props: UniversityType) => {
   )
 }
 
-const ProfessorAccordian = (props: ProfessorType) => {
+const ProfessorAccordion = (props: ProfessorType) => {
   const Rating = (props: {rating: number, total: number}) => {
     return (
       <div className="flex flex-col col-span-1 items-center">
@@ -118,7 +118,7 @@ const ResultList = (props: ListOfResults) => {
     return (
       <>
       {props.results.map(result =>
-        <UniversityAccordian {...result as UniversityType}/>
+        <UniversityAccordion {...result as UniversityType}/>
         )}
       <Button variant='contained' size='large' className='bg-primary-600 h-12'>Don't see your university? Click here to add!</Button>
       </> 
@@ -127,7 +127,7 @@ const ResultList = (props: ListOfResults) => {
     return (
       <>
       {props.results.map(result =>
-        <ProfessorAccordian {...result as ProfessorType}/>
+        <ProfessorAccordion {...result as ProfessorType}/>
         )}
       <Button variant='contained' size='large' className='bg-primary-600 h-12'>Don't see your professor? Click here to add!</Button>
       </> 
@@ -180,7 +180,7 @@ const SearchResultsComponent = () => {
     }
   }
 
-  const res = getSearchResults(searchQuery2)
+  const res = getSearchResults(searchQuery4)
     return (
         <>
         <Typography variant="h1" className="text-primary-600 font-normal tracking-widest text-xl mt-20">SEARCH RESULTS</Typography>
