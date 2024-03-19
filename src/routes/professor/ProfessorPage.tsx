@@ -1,4 +1,4 @@
-import { Avatar, Box, Card, CardContent, Chip, Divider, Button, Stack, Typography, Autocomplete, TextField } from "@mui/material";
+import { Avatar, Box, Card, CardContent, Chip, Divider, Button, Typography, Autocomplete, TextField } from "@mui/material";
 import { ProfessorType, getProfessor } from "../../services/search";
 import SearchBar from "../../shared/components/Searchbar";
 import BaseTemplate from "../../shared/components/BaseTemplate";
@@ -118,14 +118,10 @@ const ProfessorCard = (props: {professor: ProfessorType}) => {
 const PageComponent = () => {
     const professor = getProfessor(1);
     return (
-        <Stack 
-        direction="row" 
-        justifyContent="center"
-        columnGap={4}
-        >
+        <div className="flex flex-row gap-4 justify-center">
             <ReviewsList reviews={professor.reviews}/>
             <ProfessorCard professor={professor} />
-        </Stack>
+        </div>
     )
 }
 

@@ -1,11 +1,10 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Button, Card, CardContent, Typography } from "@mui/material";
   
-  type PricingCardInfo = {
+type PricingCardInfo = {
     tier: string,
     features: string[],
     price: string,
-
-  }
+}
 
 const pricingCards: PricingCardInfo[] = [
     {
@@ -14,22 +13,21 @@ const pricingCards: PricingCardInfo[] = [
         price: "$0/year"
     },
     {
-        tier: "Per-profile",
-        features: ["Professor Ratings", "Course Ratings", "1, 3, or 5 assignments per course", "Professor Recommendations", "Course Recommendations", "AI Homework Help"],
-        price: "Starting at $5/year per profile"
-    },
-    {
         tier: "Unlimited",
         features: ["Professor Ratings", "Course Ratings", "Unlimited views/year", "Professor Recommendations", "Course Recommendations", "AI Homework Help"],
         price: "$35/year"
     },
-
+    {
+        tier: "Per-profile",
+        features: ["Professor Ratings", "Course Ratings", "1, 3, or 5 assignments per course", "Professor Recommendations", "Course Recommendations", "AI Homework Help"],
+        price: "$5/year per profile"
+    },
 ];
   
 
 const Pricing = () => {
     return (
-        <div className="flex flex-col justify-center items-center gap-4 h-[85vh] w-screen">
+        <div className="flex flex-col justify-center items-center gap-10 h-screen w-screen">
         <Typography variant="h1" className="text-primary-600 font-bold text-6xl">Pricing</Typography>
         <Typography variant="body1" className="text-secondary-900 font-semibold text-center -mt-4 w-[60vw]">
             Select from per-profile, or unlimited subscription plans to get access to homework solutions submitted by thousands of students across the country! Don't want to spend money? Well you earn money when we earn money! Upload your own coursework to gain access to other students' assignments.
@@ -48,6 +46,11 @@ const Pricing = () => {
                 </Card>
             ))}
         </div>
+        <Button 
+                    variant='contained' 
+                    className="bg-primary-600 w-96 h-12">
+                        Subscribe
+                </Button>
       </div> 
         )
 }

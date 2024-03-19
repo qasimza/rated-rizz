@@ -1,4 +1,4 @@
-import { Avatar, Button, Chip, Divider, Stack, Typography } from "@mui/material";
+import { Avatar, Button, Chip, Divider, Typography } from "@mui/material";
 import SearchBar from "../../shared/components/Searchbar";
 import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
@@ -12,15 +12,12 @@ import BaseTemplate from "../../shared/components/BaseTemplate";
 const UniversityAccordian = (props: UniversityType) => {
   const Professor = (props: {name: String}) => {
     return (
-      <Stack
-      direction="column"
-      alignItems="center"
-      >
+      <div className="flex flex-col items-center">
         <Avatar className="bg-primary-600 w-20 h-20">
           <GradeIcon className="text-6xl" />
         </Avatar>
         <Typography className="text-secondary-600 font-semibold">{props.name}</Typography>
-      </Stack>
+      </div>
     )
   }
   
@@ -40,17 +37,12 @@ const UniversityAccordian = (props: UniversityType) => {
       
       <AccordionDetails>
       <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-6">MOST RECENTLY SEARCHED PROFESSORS</Typography>
-        <Stack
-        direction={"row"}
-        alignItems="center"
-        justifyContent="center"
-        columnGap={10}
-        className="mb-4">
+        <div className="flex flex-row items-center justify-center gap-10 mb-4">
           {props.professor_ids.slice(0, 5).map(professor_id => (
           <Professor name={getProfessor(professor_id).name}/>
         ))
       }
-        </Stack>  
+        </div>  
         <Divider className="mb-4"/>
         <Typography variant="h3" className="text-primary-600 font-medium tracking-widest text-base mb-4">POPULAR COURSES</Typography>
         {props.course_ids.map(course_id => (
@@ -71,17 +63,13 @@ const UniversityAccordian = (props: UniversityType) => {
 const ProfessorAccordian = (props: ProfessorType) => {
   const Rating = (props: {rating: number, total: number}) => {
     return (
-      <Stack
-      direction="column"
-      alignItems="center"
-      className="col-span-1"
-      >
+      <div className="flex flex-col col-span-1 items-center">
         <Avatar className="bg-primary-600 w-20 h-20">
           <GradeIcon className="text-6xl" />
         </Avatar>
         <Typography className="text-primary-600 font-semibold text-2xl">{props.rating} / 5.0</Typography>
         <Typography className="text-secondary-600 font-semibold text-lg">({props.total} total reviews)</Typography>
-      </Stack>
+      </div>
     )
   }
   const universityInfo = getUniversity(props.university_id);
@@ -192,7 +180,7 @@ const SearchResultsComponent = () => {
     }
   }
 
-  const res = getSearchResults(searchQuery4)
+  const res = getSearchResults(searchQuery2)
     return (
         <>
         <Typography variant="h1" className="text-primary-600 font-normal tracking-widest text-xl mt-20">SEARCH RESULTS</Typography>
