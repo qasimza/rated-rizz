@@ -1,4 +1,4 @@
-import { ClickAwayListener, Grow, IconButton, MenuItem, MenuList, Paper, Popper, Stack, Typography } from '@mui/material';
+import { ClickAwayListener, Grow, IconButton, MenuItem, MenuList, Paper, Popper, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useState, useRef, useEffect } from 'react';
 import logo from '../../shared/images/logo.png'
@@ -112,20 +112,14 @@ const SearchFields = () => {
 
 const SearchBar = () => {
     return (
-        <Stack
-        direction="row"
-        rowGap={4}
-        useFlexGap
-        flexWrap="wrap"
-        className="w-[80%] items-center justify-between"
-        >
+        <div className="flex flex-row flex-wrap gap-4 w-[80%] items-center justify-between">
         <div className='flex flex-row items-center'>
             <img src={logo} alt="Rated Rizz Logo" className='w-16 h-16'/>
             <Typography className="text-primary-600 font-bold text-4xl ml-2">RatedRizz</Typography>
         </div>
         <SearchFields/>
         <DashboardMenu/>
-        </Stack>
+        </div>
     )
 }
 
